@@ -1,0 +1,6 @@
+.env
+node_modules/
+sheet-bot-key.json
+*.lock
+logs
+*.log
