@@ -92,7 +92,7 @@ app.use(morgan('dev'))
 
 // ✅ CORS setup for Netlify frontend
 app.use(cors({
-    origin: process.env.CLIENT_ORIGIN || 'https://innovisionai.netlify.app',
+    origin: 'https://innovisionai.netlify.app',
     credentials: true,
 }))
 
