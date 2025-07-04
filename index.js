@@ -122,21 +122,20 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // ✅ Session setup
-if (process.env.NODE_ENV === 'production') {
-    app.set('trust proxy', 1); // ✅ correct placement
-}
+app.set('trust proxy', 1); // ✅ if on Render or similar
 
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'default-session-secret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
         secure: true, // ✅ must be true for HTTPS
-        sameSite: 'none', // ✅ required for cross-origin cookies
-        maxAge: 24 * 60 * 60 * 1000, // 1 day
+        sameSite: 'none', // ✅ allow cross-origin
+        maxAge: 24 * 60 * 60 * 1000
     }
 }));
+
 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Credentials", "true");
