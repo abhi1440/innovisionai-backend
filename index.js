@@ -122,17 +122,22 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // ✅ Session setup
+if (process.env.NODE_ENV === 'production') {
+    app.set('trust proxy', 1); // ✅ correct placement
+}
+
 app.use(session({
     secret: process.env.SESSION_SECRET || 'default-session-secret',
     resave: false,
     saveUninitialized: false,
     cookie: {
         httpOnly: true,
-        secure: true,
-        sameSite: 'none',
-        maxAge: 24 * 60 * 60 * 1000,
+        secure: true, // ✅ must be true for HTTPS
+        sameSite: 'none', // ✅ required for cross-origin cookies
+        maxAge: 24 * 60 * 60 * 1000, // 1 day
     }
 }));
+
 
 // ✅ Initialize passport
 app.use(passport.initialize())
