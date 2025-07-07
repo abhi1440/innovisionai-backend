@@ -97,7 +97,7 @@ app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 // ✅ CORS for Netlify
 app.use(cors({
-    origin: 'https://innovisionai.netlify.app',
+    origin: 'https://innovisontech.com',
     credentials: true,
 }));
 app.use('/api/drive', driveRoutes);
@@ -137,7 +137,7 @@ app.use((req, res, next) => {
 // ✅ Manually set credentials headers (for Render + Netlify edge fix)
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Credentials", "true");
-    res.setHeader("Access-Control-Allow-Origin", "https://innovisionai.netlify.app");
+    res.setHeader("Access-Control-Allow-Origin", "https://innovisontech.com");
     next();
 });
 
@@ -161,7 +161,7 @@ app.get('/', (req, res) => {
 });
 
 // ✅ Start server
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 3334;
 app.listen(PORT, () => {
     console.log(`✅ Server running on port ${PORT}`);
 });

@@ -23,13 +23,13 @@ router.get('/google',
 // 🟩 3. Google OAuth Callback (Improved)
 router.get('/google/callback',
     passport.authenticate('google', {
-        failureRedirect: 'https://innovisionai.netlify.app/justmypictures?login=fail',
+        failureRedirect: 'https://innovisontech.com/justmypictures?login=fail',
         session: true
     }),
     (req, res, next) => {
         req.login(req.user, (err) => {
             if (err) return next(err);
-            res.redirect('https://innovisionai.netlify.app/justmypictures?login=success');
+            res.redirect('https://innovisontech.com/justmypictures?login=success');
         });
     }
 );
