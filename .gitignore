@@ -1,0 +1,40 @@
+# 🌱 Node.js environment
+node_modules/
+.env
+.env.local
+.env.development
+.env.production
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 🚀 Build and output directories
+dist/
+build/
+out/
+
+# ⚙️ OS-specific files
+.DS_Store
+Thumbs.db
+
+# 💻 IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# ⚠️ Logs and temp files
+*.log
+logs/
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# 🚫 Misc
+coverage/
+
+# 🔐 Secret keys
+sheet-bot-key.json
