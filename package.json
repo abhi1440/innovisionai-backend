@@ -4,7 +4,9 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "dev": "kill-port 3000 && nodemon index.js"
+        "dev": "kill-port 3000 && nodemon index.js",
+        "start": "node index.js",
+        "build": "echo 'No build needed'"
     },
     "keywords": [],
     "author": "",
